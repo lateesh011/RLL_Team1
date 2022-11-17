@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Cooking_WebApi.Models.Receipe>
+
+<html>
+<head>
+
+    <link href="~/Content/StateWiseMenu.css" rel="stylesheet" />
+</head>
+<body style="background-image: url('../../image/bh4.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;height:100%;width:100% ">
+    <div>
+        <h2 style="color:black;text-align:center"><b>Find a Recipe</b></h2>
+        <h4 style="color:brown;text-align:center">Time to get into a yumilicious World </h4>
+    </div>
+    <div>
+        <h2></h2>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            @using (Html.BeginForm("GetList", "Main", FormMethod.Post))
+            {
+                <div class="form-horizontal">
+                    <div class="col-md-3">
+                        <label></label>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" name="searchstring" class="form-control" placeholder="Find Recipe Here" />
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-search"></span> Searh</button>
+                    </div>
+
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="container-fluid" style="margin-top:20px;">
+        <div class="row">
+
+            @foreach (var m in Model)
+            {
+                <div class="col-md-4" style="margin-top:20px">
+                    <div class="card" style="width: 18rem;border-radius:4px 4px">
+                        <img src="~/RecipeImg/@m.Photo" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h4 class="card-title" style="font-weight:500;color:blue">@m.RName</h4>
+                        </div>
+                        <div class="card-body">
+                            <span id="actlink" style="background: #3498DB;border-radius: 4px 5px;padding: 5px;border-top:1px solid #EAECEE">@Html.ActionLink("View Recipe", "Info", new { @id = m.RId })</span>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+</body>
+</html>

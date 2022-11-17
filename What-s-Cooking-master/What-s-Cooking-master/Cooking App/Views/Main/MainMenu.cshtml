@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Cooking_WebApi.Models.Receipe>
+@{
+    ViewBag.Title = "MainMenu";
+}
+
+
+
+
+
+<html>
+<head>
+    <link href="~/Content/StateWiseMenu.css" rel="stylesheet" />
+</head>
+<body style="background-image: url('../../image/bh4.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;height:100%;width:100% ">
+    <div class="container-fluid" style="margin-top:20px">
+        <div class="row">
+            <div class="col-md-4">
+                <a id="backme" href="~/Main/VNBMenu">  Goto MainMenu</a>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-2">
+                <h3 style="color:blue;font-weight:600">@ViewBag.Vnb</h3>
+            </div>
+            @*<div class="col-md-3">
+                    <button type="button" style="margin-left: 50px;" class="button" data-bs-toggle="modal" data-bs-target="#testmodal1">
+                        <span class="button__text">Add New</span>
+                        <span class="button__icon">
+                            <ion-icon name="add-circle-outline"></ion-icon>
+                        </span>
+                    </button>
+                </div>
+                <div class="col-md-2">
+                    <a class="nav-link" style="background: #3BA046;border-radius: 4px 5px;padding:10px;" asp-controller="Main" asp-action="Modify">Modify</a>
+                </div>*@
+        </div>
+    </div>
+    @*@foreach (Cooking_WebApi.Models.Receipe prod in ViewBag.List)*@
+    @foreach (var prod in Model)
+    {
+        <div class="row" style="margin-top:10px;">
+            <div class="d-grid gap-2">
+                <button class="btn" id="btnmenu" type="button">
+                    <table>
+                        <tr>
+                            <td>
+                                <span id="listname">@prod.RName </span>
+                            </td>
+                            <td>
+                                <span id="actlink" style="background: #3498DB;border-radius: 4px 5px;padding: 5px;">@Html.ActionLink("Click Here", "Info", new { @id = prod.RId })</span>
+                            </td>
+                        </tr>
+                    </table>
+                </button>
+            </div>
+        </div>
+    }
+
+
+
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    @*@RenderSection("scripts", required: false)*@
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+</body>
+</html>

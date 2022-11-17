@@ -1,0 +1,120 @@
+﻿@model Cooking_App.Models.Img
+
+
+<html>
+<head>
+    <link href="/css/StateWiseMenu.css" rel="stylesheet" />
+</head>
+<body>
+
+
+    @using (Html.BeginForm("Create", "Admin", FormMethod.Post, new
+    {
+        enctype = "multipart/form-data"
+    }))
+    { 
+        @Html.AntiForgeryToken()
+
+    @*<div id="testmodal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top:10px">
+        <div class="modal-dialog modal-xl" role="document">*@
+            <div class="modal-content">
+              
+                    <div class="row" style="background-color: #212F3D;padding:10px;padding-top:15px;color: #FDFEFE;border-radius:5px 5px">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="col-md-2">
+
+
+                            <h3> @Html.LabelFor(model => model.RName, htmlAttributes: new { @class = "control-label " })</h3>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group" style="margin-left:10px;">
+                                @Html.EditorFor(model => model.RName, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.RName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            @*@Html.LabelFor(model => model.VNB, htmlAttributes: new { @class = "control-label" })*@
+                            <select class="form-control" name="VNB" id="VNB" style="margin-right:300px;" required>
+                                <option disabled selected>Select Type</option>
+                                <option>Veg</option>
+                                <option>Non Veg</option>
+                                <option>Beverage</option>
+
+                            </select>
+                            @Html.ValidationMessageFor(model => model.VNB, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-2">
+                            @*@Html.LabelFor(model => model.State, htmlAttributes: new { @class = "control-label " })*@
+                            <select class="form-control" name="State" id="State" style="margin-right:300px;" required>
+                                <option disabled selected> Select State</option>
+                                <option>Andra Pradesh</option>
+                                <option>Tamil Nadu</option>
+                                <option>Uttar Pradesh</option>
+                                <option>Telungana</option>
+                                <option>Kerala</option>
+                                <option>Rajsthan</option>
+                                <option>Punjabi</option>
+                                <option>UttaraKhand</option>
+                                <option>Delhi</option>
+                                <option>Odisha</option>
+                                <option>Others</option>
+                            </select>
+                            @Html.ValidationMessageFor(model => model.State, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-2">
+                            <input type="submit" value="Save" style="margin-left:30px;" class="btn btn-primary" />
+                            <button type="button" id="clsbtn" style="margin-left:10px;" class="btn btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-4" style="border-right: 2px solid #B2BABB; margin-top:15px;">
+                                @Html.LabelFor(model => model.Photo, htmlAttributes: new { @class = "control-label" })
+                                <div class="form-group">
+                                    <div>
+                                        <input type="file" name="ImageFile"  required />
+                                    </div>
+                                </div>
+
+
+
+                                <p id="line" style="border-top: 2px solid #B2BABB;"></p>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Ingredient, htmlAttributes: new { @class = "control-label" })
+
+                                    <p class="card-text">
+                                        <textarea class="form-control" name="Ingredient" id="ingredient" rows="10" required></textarea>
+                                    </p>
+                                    @Html.ValidationMessageFor(model => model.Ingredient, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group" style="margin-top:15px;">
+
+                                    @Html.LabelFor(model => model.Youtube, htmlAttributes: new { @class = "control-label " })
+
+                                    @Html.EditorFor(model => model.Youtube, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Youtube, "", new { @class = "text-danger" })
+                                </div>
+                                <p id="line" style="border-top: 2px solid #B2BABB;margin-top:22px;"></p>
+                                <div class="form-group">
+                                    <label asp-for="HTM" class="control-label"><h4>How_To_Make</h4></label>
+                                    <p class="card-text">
+                                        <textarea class="form-control" name="HTM" id="htm" rows="10" required></textarea>
+                                    </p>
+                                    @Html.ValidationMessageFor(model => model.HTM, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+    }
+</body>
+</html>
+
+
+
+
+
+

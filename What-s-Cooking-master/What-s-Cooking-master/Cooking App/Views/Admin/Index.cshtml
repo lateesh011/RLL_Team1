@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Cooking_WebApi.Models.Receipe>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<html>
+<head >
+
+    <link href="~/Content/StateWiseMenu.css" rel="stylesheet" />
+    <script type="text/javascript">
+        function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
+    </script>
+</head>
+<body style="background-image: url('../../image/bh4.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;height:100%;width:100% ">
+
+    <div class="container-fluid" style="margin-top:20px">
+        <div class="row">
+            <div class="col-md-4">
+                <a id="backme" href="~/Main/VNBMenu">  Goto MainMenu</a>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-2">
+                <h3 style="color:blue;font-weight:600">All Recipes</h3>
+            </div>
+            <div class="col-md-3">
+                <a type="button" style="margin-left:50px" class="button" href="~/Admin/Create" >
+                    <span class="button__text">Add New</span>
+                    <span class="button__icon">
+                        <ion-icon name="add-circle-outline"></ion-icon>
+                    </span>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container-fluid" style="margin-top:20px;">
+        <div class="row">
+
+            @foreach (var m in Model)
+            {
+                <div class="col-md-4" style="margin-top:20px">
+                    <div class="card" style="width: 18rem;border-radius:4px 4px">
+                        <img src="~/RecipeImg/@m.Photo" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h4 class="card-title" style="font-weight:500;color:blue">@m.RName</h4>
+                        </div>
+                        <div class="card-body">
+                            <span id="actlink" style="background: #3498DB;border-radius: 4px 5px;padding: 5px;border-top:1px solid #EAECEE">@Html.ActionLink("View Receipe", "Details", new { @id = m.RId })</span>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+  

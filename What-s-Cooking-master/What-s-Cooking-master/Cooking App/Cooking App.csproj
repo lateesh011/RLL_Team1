@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5234AF91-3887-42DD-899A-D75C97D15E61}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cooking_App</RootNamespace>
+    <AssemblyName>Cooking App</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44304</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.3\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.2.0.1\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.9\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.9\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.9\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.9\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.9\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MainController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Img.cs" />
+    <Compile Include="Models\LoginMethods.cs" />
+    <Compile Include="Models\LoginProfile.cs" />
+    <Compile Include="Models\State.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Info.css" />
+    <Content Include="Content\LoginPage.css" />
+    <Content Include="Content\MainPage.css" />
+    <Content Include="Content\Profile.css" />
+    <Content Include="Content\StateWiseMenu.css" />
+    <Content Include="Content\VNBMenu.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Image\BeverageMain.jpg" />
+    <Content Include="Image\bg.jpg" />
+    <Content Include="Image\bg1.jpg" />
+    <Content Include="Image\bg2.jpg" />
+    <Content Include="Image\Card1.jpg" />
+    <Content Include="Image\Card2.jpg" />
+    <Content Include="Image\Card3.jpg" />
+    <Content Include="Image\CardU1.jpg" />
+    <Content Include="Image\CardU2.jpg" />
+    <Content Include="Image\CardU3.jpg" />
+    <Content Include="Image\ChickenMain.jpg" />
+    <Content Include="Image\facebook.jpg" />
+    <Content Include="Image\google.png" />
+    <Content Include="Image\Main.jpg" />
+    <Content Include="Image\Profile.jpg" />
+    <Content Include="Image\VegMain.jpg" />
+    <Content Include="NewlyAddedImg\046a1367-dbb6-4643-9d1f-a67cb35ad552_Card1.jpg" />
+    <Content Include="NewlyAddedImg\123066d7-b85b-4dab-adc8-ece5e311f734_Mint Gur Sharbat.jpg" />
+    <Content Include="NewlyAddedImg\178246d6-6e00-4bc4-9e32-908aedba4e51_CardU2.jpg" />
+    <Content Include="NewlyAddedImg\1a45182f-4fe2-4e2e-bffe-0e66be9b3023_Zunka.jpg" />
+    <Content Include="NewlyAddedImg\2205eb40-5e00-4b1e-91f3-9c804215b4a3_Zunka.jpg" />
+    <Content Include="NewlyAddedImg\29acb34a-fd26-4636-b9b1-50e50fd4d6ed_Kesar Mango Lassi.jpg" />
+    <Content Include="NewlyAddedImg\33b35bac-5c13-4f2c-b388-956dad317166_CardU2.jpg" />
+    <Content Include="NewlyAddedImg\33ccf7d1-ec2e-43ad-87b9-96fc4618980e_Upma.png" />
+    <Content Include="NewlyAddedImg\3b03cf46-86f0-4735-b9e2-653599ca41c9_dhokar dalna.jpg" />
+    <Content Include="NewlyAddedImg\45292302-cc7a-4b70-b133-fffcffd38b80_Cucumber &amp; Coriander Smoothie.png" />
+    <Content Include="NewlyAddedImg\467ddb08-4050-45a6-8e75-02835d05a0f4_Upma.png" />
+    <Content Include="NewlyAddedImg\48100276-22f5-4117-a30a-1c9c7b31fb94_Upma.png" />
+    <Content Include="NewlyAddedImg\58935e89-2af3-4d59-99c0-7b40d388cc72_Kesar Mango Lassi.jpg" />
+    <Content Include="NewlyAddedImg\612ef257-13e9-4d68-b007-fa7bf0e9de40_Kesar Thandai Recipe.jpg" />
+    <Content Include="NewlyAddedImg\61b04169-0c4a-4370-8925-aafb3e96f201_Pav Bhaji.jpg" />
+    <Content Include="NewlyAddedImg\6acb8b9c-7eae-4cfb-81c2-b7e69bad11b6_dhokar dalna.jpg" />
+    <Content Include="NewlyAddedImg\6c210411-3113-47a7-b518-890bc8c1c01d_Kesar Mango Lassi.jpg" />
+    <Content Include="NewlyAddedImg\6c319a4a-dcda-4663-84ed-d0405c65bf70_Petha.jpg" />
+    <Content Include="NewlyAddedImg\6e2f3405-42f0-42c5-873c-51b1736ac460_Upma.png" />
+    <Content Include="NewlyAddedImg\75ae61d6-85ac-4b17-a99d-d4506780393d_CardU2.jpg" />
+    <Content Include="NewlyAddedImg\7fdb3b24-63c2-4d57-83bb-bbda9d6a803d_Mint Gur Sharbat.jpg" />
+    <Content Include="NewlyAddedImg\81d42244-34fb-4ef1-9d58-a11855414978_Medu Vada.jpg" />
+    <Content Include="NewlyAddedImg\8745b47c-7c88-4e97-8a46-be9b9dabe067_Upma.png" />
+    <Content Include="NewlyAddedImg\91e3ba46-5923-498e-b3ad-2c767abcd7e8_Anjeer Milk.jpg" />
+    <Content Include="NewlyAddedImg\98585d0f-4104-48bb-be80-c6d57a339728_Poha.png" />
+    <Content Include="NewlyAddedImg\a418db27-be57-4724-8a1c-20ffaf6c6591_Zunka.jpg" />
+    <Content Include="NewlyAddedImg\a7b116af-e335-40d8-bcf1-4a3b1d550e01_Kesar Mango Lassi.jpg" />
+    <Content Include="NewlyAddedImg\aab7716a-1aa7-4f08-aa0d-de92384ab05d_CardU2.jpg" />
+    <Content Include="NewlyAddedImg\ad725d83-e924-449c-8467-6a73b9143b91_Zunka.jpg" />
+    <Content Include="NewlyAddedImg\afe40ebf-b2d7-46cf-aeef-90821218e216_channels4_profile.jpg" />
+    <Content Include="NewlyAddedImg\b9a3b9b6-4fde-43b2-ae34-c0f295ffca2a_Zunka.jpg" />
+    <Content Include="NewlyAddedImg\bcc636ad-53f0-4180-82a8-53ac00ff8c3e_Kesar Mango Lassi.jpg" />
+    <Content Include="NewlyAddedImg\c31b9f2b-3446-47fa-8d81-538e58f02d19_CardU2.jpg" />
+    <Content Include="NewlyAddedImg\d625452a-23b7-4772-824c-3f2f4a0807c9_Dal bati churma.jpg" />
+    <Content Include="NewlyAddedImg\d63cde9c-75e2-4c71-9882-497dd6d62f83_Zunka.jpg" />
+    <Content Include="NewlyAddedImg\d75382ac-46c7-48b2-ad92-f4b20e0312eb_Anjeer Milk.jpg" />
+    <Content Include="NewlyAddedImg\dbc01052-2005-462d-adca-e02d34e225bb_Card2.jpg" />
+    <Content Include="NewlyAddedImg\de753e81-211d-4885-bad9-961d5518589b_Gujrathi kadhi.jpg" />
+    <Content Include="NewlyAddedImg\e1089ac2-b0f4-4100-8a26-a0256fe3983e_CardU2.jpg" />
+    <Content Include="NewlyAddedImg\e6db2109-25ca-4956-8669-6114443bef76_CardU2.jpg" />
+    <Content Include="NewlyAddedImg\f206e374-4785-4c73-9d9d-e0cfa8f8b9d0_Dum Aloo.png" />
+    <Content Include="NewlyAddedImg\f378798a-cbb5-4818-86e4-02ba7cebe021_Upma.png" />
+    <Content Include="NewlyAddedImg\f742e288-339d-4225-b462-9bfda5111e32_Pav Bhaji.jpg" />
+    <Content Include="NewlyAddedImg\f785daac-d8c1-4bcd-ba9e-989d9191b567_Dal Makhani.jpg" />
+    <Content Include="NewlyAddedImg\fac1e5a3-888e-4e36-9195-ddc711ab7766_Komal Gujrati Chass.jpg" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Image\bg9.webp" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Main\MainPage.cshtml" />
+    <Content Include="Views\Main\FeedbackPage.cshtml" />
+    <Content Include="Views\Main\StateWiseMenu.cshtml" />
+    <Content Include="Views\Main\VNBMenu.cshtml" />
+    <Content Include="Views\Main\LoginPage.cshtml" />
+    <Content Include="Views\Main\LogOut.cshtml" />
+    <Content Include="Views\Main\Profile.cshtml" />
+    <Content Include="Views\Main\MainMenu.cshtml" />
+    <Content Include="Views\Main\Info.cshtml" />
+    <Content Include="Views\Main\ForgotPassword.cshtml" />
+    <Content Include="Views\Admin\Create.cshtml" />
+    <Content Include="Views\Admin\Delete.cshtml" />
+    <Content Include="Views\Admin\Details.cshtml" />
+    <Content Include="Views\Admin\Edit.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Main\SignupPage.cshtml" />
+    <Content Include="Views\Main\BeverageMenu.cshtml" />
+    <Content Include="Views\Admin\LoginPage.cshtml" />
+    <Content Include="Views\Admin\LogOut.cshtml" />
+    <Content Include="Views\Main\GetList.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="RecipeImg\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cooking_WebApi\Cooking_WebApi.csproj">
+      <Project>{4EEC7D0E-8E34-419E-A810-FA42A9DCBA86}</Project>
+      <Name>Cooking_WebApi</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58496</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44304/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

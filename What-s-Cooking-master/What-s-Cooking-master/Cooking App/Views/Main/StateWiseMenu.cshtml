@@ -1,0 +1,48 @@
+﻿
+@model IEnumerable<Cooking_App.Models.State>
+@{
+    ViewData["Title"] = "StateWiseMenu Page";
+}
+<html>
+<head>
+    <link href="~/Content/StateWiseMenu.css" rel="stylesheet" />
+</head>
+<body style="background-image: url('../../image/bh4.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;height:100%;width:100% ">
+    <div class="container-fluid" style="margin-top:20px;">
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary">@Html.ActionLink("Goto Main Menu", "VNBMenu", "Main")</button>
+            </div>
+            <div class="col-md-4">
+                <h2 style="color:darkblue"><b>State Wise Menu</b></h2>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" style="margin-top:10px;">
+        <div class="row">
+            @*@foreach (Cooking_App.Models.State m in ViewBag.StateList)*@
+            @foreach(var m in Model)
+            {
+                <div class="col-sm-4">
+                    <div class="card" style="margin-top:15px;">
+                        <div class="card-body">
+                            <h4 class="card-title">@m.Sname.ToUpper()</h4>
+                            <p id="line" style="border-top: 2px solid #B2BABB;"></p>
+                            <span id="actlink">@Html.ActionLink("Click Here", "MainMenu", new { @id = m.Sname })</span>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+
+
+
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+</body>
+</html>
+
+
